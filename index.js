@@ -7,9 +7,11 @@ const cors = require('cors')
 const connectDB = require('./db')
 const db = require("./models/model")
 connectDB()
+
 app.use(cors({
-    origin: '*'
+    origin: process.env.FRONTENDPORT || '*'
 }))
+
 app.use(express.json())
 
 
